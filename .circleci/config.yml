@@ -4,10 +4,16 @@ version: 2.1
 jobs:
   # Job one with a unique name
   say_hello:
+    docker:
+      - image: cimg/node:14.13.0
     steps:
+      - checkout
+      - run: node --version
       - run: echo "Say hello to YAML!"
   # Job two with a unique name
   say_goodbye:
+    docker:
+      - image: cimg/node:14.13.0
     steps:
       - run: echo "Say goodbye to YAML!"
 
